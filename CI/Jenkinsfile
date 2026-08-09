@@ -12,7 +12,7 @@ environment {
     DOCKER = credentials('docker_creds')
 
     // Docker Image Details
-    IMAGE_NAME = "amolpdevops/java-app"
+    IMAGE_NAME = "nageshjdevops/java-app"
     IMAGE_TAG  = "4.0"
 }
 
