@@ -89,7 +89,7 @@ stages {
             sh '''
             echo "========== Uploading WAR to S3 =========="
 
-            aws s3 cp target/*.war s3://test-bucket-15956/maven_repo/
+            aws s3 cp target/*.war s3://super-abc/maven_repo/
 
             echo "WAR Uploaded Successfully"
             '''
