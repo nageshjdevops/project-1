@@ -1,22 +1,43 @@
+ docker compose config
+name: cd
 services:
-
   tomcat1:
-    image: java-app:latest
     container_name: tomcat1
+    image: ':'
+    networks:
+      default: null
     ports:
-      - "8081:8080"
+      - mode: ingress
+        target: 8080
+        published: "8081"
+        protocol: tcp
     restart: always
-
   tomcat2:
-    image: java-app:latest
     container_name: tomcat2
+    image: ':'
+    networks:
+      default: null
     ports:
-      - "8082:8080"
+      - mode: ingress
+        target: 8080
+        published: "8082"
+        protocol: tcp
     restart: always
-
   tomcat3:
-    image: java-app:latest
     container_name: tomcat3
+    image: ':'
+    networks:
+      default: null
     ports:
-      - "8083:8080"
+      - mode: ingress
+        target: 8080
+        published: "8083"
+        protocol: tcp
     restart: always
+networks:
+  default:
+    name: cd_default
+[root@ip-172-31-93-150 CD]# docker compose config | grep -n "image:"
+5:    image: ':'
+16:    image: ':'
+27:    image: ':'
